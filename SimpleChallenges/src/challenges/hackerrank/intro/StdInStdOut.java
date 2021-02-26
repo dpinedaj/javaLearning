@@ -12,36 +12,26 @@ public class StdInStdOut {
 
 
     }
-    private static void scanNum(Scanner scan){
+
+    private static void scanNum(Scanner scan) {
         int[] numbers = new int[3];
         for (int i = 0; i < 3; i++) {
             numbers[i] = scan.nextInt();
         }
-        for (int num : numbers){
+        for (int num : numbers) {
             System.out.println(num);
         }
     }
-    private static void scanManyTypes(Scanner scan){
-    for (int i = 0; i < 3; i++){
-        String value = scan.nextLine();
-        Object casted = Caster.cast(value);
-        String type = casted.getClass().getSimpleName();
-        System.out.println(String.format("%s: %s", type, value));
-        
-    }
-    }
-}
 
-class Caster{
-    static Object cast(String s) {
-        try {
-            return Integer.parseInt(s);
-        } catch (NumberFormatException nfe){
-            try{
-                return Double.parseDouble(s);
-            } catch (NumberFormatException nfe2){
-                return s;
-            }
+    private static void scanManyTypes(Scanner scan) {
+        for (int i = 0; i < 3; i++) {
+            String value = scan.nextLine();
+            Object casted = Caster.parseString(value);
+            String type = casted.getClass().getSimpleName();
+            System.out.println(String.format("%s: %s", type, value));
+
         }
     }
 }
+
+

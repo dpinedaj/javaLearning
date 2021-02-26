@@ -22,7 +22,7 @@ public class IfElseStatement {
         }
     }
 
-    private static String oneLine(int N){
-        return (N%2==1 || (N>=6 && N<=20)) ? "Weird" : "Not Weird";
+    private static String oneLine(int N) {
+        return (N % 2 == 1 || (N >= 6 && N <= 20)) ? "Weird" : "Not Weird";
     }
 }
